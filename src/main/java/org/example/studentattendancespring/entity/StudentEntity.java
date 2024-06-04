@@ -2,6 +2,7 @@ package org.example.studentattendancespring.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
@@ -11,17 +12,18 @@ public class StudentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+    @NotBlank(message = "Last name cannot be empty")
     private String lastName;
-    @NotBlank
+    @NotBlank(message = "First name cannot be empty")
     private String firstName;
-    @NotBlank
+    @NotNull
     private String middleName;
-    @NotBlank
-    private Status status;
+
+    private String status;
 
     @ManyToOne
     @JoinColumn(name = "groups_id")
+    @NotNull(message = "Group name cannot be empty")
     private GroupEntity group;
 
     public Long getId() {
@@ -56,11 +58,11 @@ public class StudentEntity {
         this.middleName = middleName;
     }
 
-    public Status getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

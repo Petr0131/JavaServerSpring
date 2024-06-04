@@ -1,18 +1,18 @@
 package org.example.studentattendancespring.model.response;
 
-public class ComonResponse<T> {
+public class CommonResponse<T> {
     private final T data;
     private final int status;
     private final String messageError;
 
-    public ComonResponse(int status, String messageError) {
+    public CommonResponse(int status, String messageError) {
         this.data = null;
         this.status = status;
         this.messageError = messageError;
     }
 
 
-    public ComonResponse(T data, int status) {
+    public CommonResponse(T data, int status) {
         this.data = data;
         this.status = status;
         this.messageError = null;

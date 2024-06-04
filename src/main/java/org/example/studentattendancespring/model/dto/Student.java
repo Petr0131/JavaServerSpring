@@ -8,7 +8,7 @@ public class Student {
     private String lastName;
     private String firstName;
     private String middleName;
-    private Status status;
+    private String status;
     private Long idGroup;
 
     public static Student toModel(StudentEntity student){
@@ -54,11 +54,11 @@ public class Student {
         this.middleName = middleName;
     }
 
-    public Status getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

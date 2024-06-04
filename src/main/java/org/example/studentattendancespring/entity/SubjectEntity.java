@@ -11,8 +11,9 @@ public class SubjectEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Subject name cannot be empty")
     @NotBlank
-    private String subjectName;
+    private String name;
 
     @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
     private List<LessonEntity> lessons;
@@ -25,12 +26,12 @@ public class SubjectEntity {
         this.id = id;
     }
 
-    public String getSubjectName() {
-        return subjectName;
+    public String getName() {
+        return name;
     }
 
-    public void setSubjectName(String subjectName) {
-        this.subjectName = subjectName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<LessonEntity> getLessons() {

@@ -17,7 +17,7 @@ public class SubjectService {
     private SubjectRepo subjectRepo;
 
     public Subject addSubject(SubjectEntity subject) {
-        if (subjectRepo.findByName(subject.getSubjectName())!=null){
+        if (subjectRepo.findByName(subject.getName())!=null){
             throw new SubjectAlreadyExistsException("Subject already exists!");
         }
         subjectRepo.save(subject);
@@ -27,7 +27,7 @@ public class SubjectService {
     public Subject editSubject(SubjectEntity subject) {
         SubjectEntity subjectEntity = subjectRepo.findById(subject.getId())
                 .orElseThrow(()-> new SubjectNotFoundException("Subject not found!"));
-        subjectEntity.setSubjectName(subject.getSubjectName());
+        subjectEntity.setName(subject.getName());
         subjectRepo.save(subjectEntity);
         return Subject.toModel(subject);
     }

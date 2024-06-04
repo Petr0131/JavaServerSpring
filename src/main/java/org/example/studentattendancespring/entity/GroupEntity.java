@@ -12,7 +12,7 @@ public class GroupEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+    @NotBlank(message = "Group name cannot be empty")
     @Column(name = "group_name")
     private  String name;
 

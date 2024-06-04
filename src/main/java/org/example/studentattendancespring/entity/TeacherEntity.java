@@ -2,6 +2,7 @@ package org.example.studentattendancespring.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
@@ -11,10 +12,13 @@ public class TeacherEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Last name cannot be empty")
     @NotBlank
     private String lastName;
+    @NotBlank(message = "First name cannot be empty")
     @NotBlank
     private String firstName;
+    @NotNull
     @NotBlank
     private String middleName;
 
