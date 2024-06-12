@@ -33,12 +33,4 @@ public class SubjectEntity {
     public void setName(String name) {
         this.name = name;
     }
-
-    public List<LessonEntity> getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(List<LessonEntity> lessons) {
-        this.lessons = lessons;
-    }
 }

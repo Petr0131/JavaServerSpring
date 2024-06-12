@@ -5,6 +5,8 @@ import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -14,8 +16,8 @@ public class LessonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @FutureOrPresent(message = "Дата должна быть в будущем или в настоящем времени")
-    private Timestamp date;
+    @FutureOrPresent(message = "Date must be in the future or present")
+    private Date date;
 
     @Positive
     @Column(name = "lesson_number")
@@ -23,12 +25,12 @@ public class LessonEntity {
 
     @ManyToOne
     @JoinColumn(name = "teacher_id")
-    @NotNull(message = "Необходимо указать преподавателя")
+    @NotNull(message = "Teacher name cannot be empty")
     private TeacherEntity teacher;
 
     @ManyToOne
     @JoinColumn(name = "subject_id")
-    @NotNull(message = "Необходимо указать предмет")
+    @NotNull(message = "Subject name cannot be empty")
     private SubjectEntity subject;
 
     @ManyToOne
@@ -44,11 +46,11 @@ public class LessonEntity {
         this.id = id;
     }
 
-    public Timestamp getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

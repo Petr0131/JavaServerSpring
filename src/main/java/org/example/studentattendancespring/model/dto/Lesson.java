@@ -2,11 +2,12 @@ package org.example.studentattendancespring.model.dto;
 
 import org.example.studentattendancespring.entity.LessonEntity;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Lesson {
     private  Long id;
-    private Timestamp date;
+    private Date date;
     private int lessonNumber;
     public static Lesson toModel(LessonEntity lesson){
         Lesson model = new Lesson();
@@ -16,11 +17,11 @@ public class Lesson {
         return model;
     }
 
-    public Timestamp getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

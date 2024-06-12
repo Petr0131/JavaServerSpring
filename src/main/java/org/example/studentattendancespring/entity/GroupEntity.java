@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "group_studens")
+@Table(name = "group_students")
 public class GroupEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,21 +36,5 @@ public class GroupEntity {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<StudentEntity> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<StudentEntity> students) {
-        this.students = students;
-    }
-
-    public List<LessonEntity> getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(List<LessonEntity> lessons) {
-        this.lessons = lessons;
     }
 }

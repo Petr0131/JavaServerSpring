@@ -6,6 +6,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Component
@@ -42,7 +43,7 @@ public class LessonEntityValidator implements Validator {
                     "Group name cannot be empty");
         }
 
-        if (lesson.getDate() != null && lesson.getDate().before(new Timestamp(System.currentTimeMillis()))) {
+        if (lesson.getDate() != null && lesson.getDate().before(new Date(System.currentTimeMillis()))) {
             errors.rejectValue(
                     "date",
                     "FutureOrPresent.lessonEntity.date",

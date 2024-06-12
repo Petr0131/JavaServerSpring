@@ -56,13 +56,5 @@ public class TeacherEntity {
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
-
-    public List<LessonEntity> getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(List<LessonEntity> lessons) {
-        this.lessons = lessons;
-    }
 }
 

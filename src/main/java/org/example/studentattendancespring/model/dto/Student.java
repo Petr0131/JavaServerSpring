@@ -1,6 +1,5 @@
 package org.example.studentattendancespring.model.dto;
 
-import org.example.studentattendancespring.entity.Status;
 import org.example.studentattendancespring.entity.StudentEntity;
 
 public class Student {
